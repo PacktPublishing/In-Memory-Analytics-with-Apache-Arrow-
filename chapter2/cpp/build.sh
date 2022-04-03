@@ -22,4 +22,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-g++ examples.cc -o examples `pkg-config --cflags --libs arrow`
+g++ csv_reader.cc -o csv_reader `pkg-config --cflags --libs arrow-csv`
+g++ csv_writer.cc -o csv_writer `pkg-config --cflags --libs arrow-csv`
+g++ json_reader.cc -o json_reader `pkg-config --cflags --libs arrow-json`
+g++ orc_reader_writer.cc -o orc_reader_writer `pkg-config --cflags --libs arrow-orc`
+g++ parquet_reader_writer.cc -o parquet_reader_writer `pkg-config --cflags --libs parquet`

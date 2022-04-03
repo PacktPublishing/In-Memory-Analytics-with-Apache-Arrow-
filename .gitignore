@@ -1,1 +1,6 @@
 chapter1/cpp/examples
+chapter2/cpp/csv_reader
+chapter2/cpp/csv_writer
+chapter2/cpp/json_reader
+chapter2/cpp/orc_reader_writer
+chapter2/cpp/parquet_reader_writer
