@@ -24,3 +24,5 @@
 
 g++ -fPIC -shared -o libsample.so example_cdata.cc
 g++ compute_functions.cc -o example1 `pkg-config --cflags --libs parquet arrow-compute`
+g++ datasets_api.cc -o datasets_api `pkg-config --cflags --libs parquet arrow-dataset`
+g++ s3_datasets.cc -o s3_dataset `pkg-config --cflags --libs parquet arrow-dataset`

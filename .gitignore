@@ -2,6 +2,7 @@
 chapter*/cpp/*
 !chapter*/cpp/build.sh
 !chapter*/cpp/*.cc
+!chapter5/cpp/timer.h
 chapter*/go/*.h
 chapter*/go/*.o
 chapter*/go/*.c
