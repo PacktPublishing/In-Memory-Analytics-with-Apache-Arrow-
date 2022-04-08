@@ -24,8 +24,9 @@ module sample
 
 go 1.17
 
+require github.com/apache/arrow/go/v7 v7.0.0
+
 require (
-	github.com/apache/arrow/go/v7 v7.0.0 // indirect
 	github.com/goccy/go-json v0.9.6 // indirect
 	github.com/google/flatbuffers v2.0.6+incompatible // indirect
 	github.com/klauspost/compress v1.15.1 // indirect
