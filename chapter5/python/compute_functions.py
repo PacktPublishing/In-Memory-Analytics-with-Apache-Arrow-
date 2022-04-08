@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env python3
 
 # MIT License
 #
@@ -22,5 +22,20 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-g++ -fPIC -shared -o libsample.so example_cdata.cc
-g++ compute_functions.cc -o example1 `pkg-config --cflags --libs parquet arrow-compute`
+import pyarrow
+import pyarrow.parquet as pq
+import pyarrow.compute as pc
+
+filepath = '../../sample_data/yellow_tripdata_2015-01.parquet'
+
+tbl = pq.read_table(filepath) # entire file
+tbl_col = pq.read_table(filepath, columns=['total_amount']) # just the one column
+
+column = tbl['total_amount']
+print(pc.add(column, 5.5))
+
+print(pc.min_max(column))
+
+sort_keys = [('total_amount', 'descending')]
+out = tbl.take(pc.sort_indices(tbl, sort_keys=sort_keys))
+print(out)
