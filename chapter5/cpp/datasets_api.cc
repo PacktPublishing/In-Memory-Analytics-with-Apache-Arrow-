@@ -20,38 +20,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include <arrow/io/api.h>
-#include <arrow/json/api.h>
-#include <arrow/table.h>
+#include <arrow/api.h>
 #include <iostream>
 
-int main(int argc, char** argv) {
-  auto read_options = arrow::json::ReadOptions::Defaults();
-  auto parse_options = arrow::json::ParseOptions::Defaults();
+#define ABORT_ON_FAIL(expr)                       \
+  do {                                            \
+    arrow::Status status_ = (expr);               \
+    if (!status.ok()) {                           \
+      std::cerr << status.message() << std::endl; \
+      abort();                                    \
+    }                                             \
+  } while (0);
 
-  constexpr auto filename = "sample.json";  // could be any json file
-
-  auto maybe_input = arrow::io::ReadableFile::Open(filename);
-  if (!maybe_input.ok()) {
-    std::cerr << maybe_input.status().message() << std::endl;
-    return 1;
-  }
-
-  std::shared_ptr<arrow::io::InputStream> input = *maybe_input;
-  arrow::MemoryPool* pool = arrow::default_memory_pool();
-  auto maybe_reader =
-      arrow::json::TableReader::Make(pool, input, read_options, parse_options);
-  if (!maybe_reader.ok()) {
-    std::cerr << maybe_reader.status().message() << std::endl;
-    return 1;
-  }
-  std::shared_ptr<arrow::json::TableReader> reader = *maybe_reader;
-  auto maybe_table = reader->Read();
-  if (!maybe_table.ok()) {
-    std::cerr << maybe_table.status().message() << std::endl;
-    return 1;
-  }
-
-  std::shared_ptr<arrow::Table> table = *maybe_table;
-  std::cout << table->ToString() << std::endl;
-}
+int main(int argc, char** argv) {}
