@@ -1,0 +1,7 @@
+go 1.18
+
+use (
+	./chapter1/go
+	./chapter2/go
+	./chapter5/go
+)

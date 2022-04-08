@@ -20,16 +20,58 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-module chapter1
+package main
 
-go 1.17
+import (
+	"fmt"
+	"io"
+	"unsafe"
 
-require github.com/apache/arrow/go/v7 v7.0.0
-
-require (
-	github.com/goccy/go-json v0.7.10 // indirect
-	golang.org/x/mod v0.6.0-dev.0.20220106191415-9b9b3d81d5e3 // indirect
-	golang.org/x/sys v0.0.0-20220330033206-e17cdc41300f // indirect
-	golang.org/x/tools v0.1.10 // indirect
-	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
+	"github.com/apache/arrow/go/v7/arrow"
+	"github.com/apache/arrow/go/v7/arrow/cdata"
 )
+
+import "C"
+
+//export processBatch
+func processBatch(scptr, rbptr uintptr) {
+	schema := cdata.SchemaFromPtr(scptr)
+	arr := cdata.ArrayFromPtr(rbptr)
+
+	rec, err := cdata.ImportCRecordBatch(arr, schema)
+	if err != nil {
+		panic(err) // handle the error!
+	}
+	// make sure we call the release callback when we’re done
+	defer rec.Release()
+	fmt.Println(rec.Schema())
+	fmt.Println(rec.NumCols(), rec.NumRows())
+}
+
+//export processStream
+func processStream(ptr uintptr) {
+	var (
+		arrstream = (*cdata.CArrowArrayStream)(unsafe.Pointer(ptr))
+		rec       arrow.Record
+		err       error
+		x         int
+	)
+
+	rdr := cdata.ImportCArrayStream(arrstream, nil)
+	for {
+		rec, err = rdr.Read()
+		if err != nil {
+			break
+		}
+
+		fmt.Println("Batch: ", x, rec.NumCols(), rec.NumRows())
+		rec.Release()
+		x++
+	}
+
+	if err != io.EOF {
+		panic(err) // handle the error!
+	}
+}
+
+func main() {}

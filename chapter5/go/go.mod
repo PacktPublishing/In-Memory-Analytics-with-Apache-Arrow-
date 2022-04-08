@@ -20,16 +20,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-module chapter1
+module sample
 
 go 1.17
 
-require github.com/apache/arrow/go/v7 v7.0.0
-
 require (
-	github.com/goccy/go-json v0.7.10 // indirect
+	github.com/apache/arrow/go/v7 v7.0.0 // indirect
+	github.com/goccy/go-json v0.9.6 // indirect
+	github.com/google/flatbuffers v2.0.6+incompatible // indirect
+	github.com/klauspost/compress v1.15.1 // indirect
+	github.com/pierrec/lz4/v4 v4.1.14 // indirect
 	golang.org/x/mod v0.6.0-dev.0.20220106191415-9b9b3d81d5e3 // indirect
-	golang.org/x/sys v0.0.0-20220330033206-e17cdc41300f // indirect
+	golang.org/x/sys v0.0.0-20220406163625-3f8b81556e12 // indirect
 	golang.org/x/tools v0.1.10 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 )
