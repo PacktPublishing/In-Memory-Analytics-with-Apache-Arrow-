@@ -41,7 +41,7 @@ col_pd_csv = pd.read_csv('yellow_tripdata_2015-01.csv')['total_amount']
 memory_pd_csv = psutil.Process(os.getpid()).memory_info().rss >> 20
 
 # use pyarrow and read the file but only the column we want
-col_pa_csv = pa.csv.read_csv('yellow_tripdata_2015-01.csv',
+col_pa_csv = pa.csv.read_csv('yellow_tripdata_2015-01.csv',                
                 convert_options=pa.csv.ConvertOptions(
                     include_columns=['total_amount'])).to_pandas()
 memory_pa_csv = psutil.Process(os.getpid()).memory_info().rss >> 20
@@ -65,8 +65,8 @@ table_mmap = pa.ipc.RecordBatchFileReader(source).read_all().column(
 col_arrow_mmap = table_mmap.to_pandas()
 memory_mmapped = psutil.Process(os.getpid()).memory_info().rss >> 20
 
-print('pandas:', memory_pd_csv - memory_init, ' B')
-print('pyarrow:', memory_pa_csv - memory_pd_csv, ' B')
-print('parquet col:', memory_parquet - memory_pa_csv, ' B')
-print('arrow ipc:', memory_arrow - memory_parquet, ' B')
-print('mmap zero-copy:', memory_mmapped - memory_arrow, ' B')
+print('pandas:', memory_pd_csv - memory_init, ' MB')
+print('pyarrow:', memory_pa_csv - memory_pd_csv, ' MB')
+print('parquet col:', memory_parquet - memory_pa_csv, ' MB')
+print('arrow ipc:', memory_arrow - memory_parquet, ' MB')
+print('mmap zero-copy:', memory_mmapped - memory_arrow, ' MB')
