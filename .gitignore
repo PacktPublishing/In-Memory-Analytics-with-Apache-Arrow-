@@ -7,3 +7,4 @@ chapter*/go/*.h
 chapter*/go/*.o
 chapter*/go/*.c
 *.arrow
+.ipynb_checkpoints
