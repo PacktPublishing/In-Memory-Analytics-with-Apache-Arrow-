@@ -45,8 +45,8 @@ class Server(flight.FlightServerBase):
                 data = pq.ParquetFile(f, pre_buffer=True)
                 yield flight.FlightInfo(
                     data.schema_arrow, # the arrow schema
-                    flight.FlightDescriptor.for_path(f.path),
-                    [flight.FlightEndpoint(f.path, [])], # no endpoints provided
+                    flight.FlightDescriptor.for_path(finfo.path),
+                    [flight.FlightEndpoint(finfo.path, [])], # no endpoints provided
                     data.metadata.num_rows,
                     -1
                 )
