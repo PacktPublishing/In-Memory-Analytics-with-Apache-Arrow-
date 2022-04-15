@@ -5,6 +5,6 @@ use (
 	./chapter2/go
 	./chapter3/go
 	./chapter5/go
-	./chapter6/go
+	./chapter7/go
 	./utils
 )
