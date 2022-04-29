@@ -22,4 +22,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-g++ -fPIC -shared -o libsample.so example_cdata.cc
+g++ datasets_api.cc -O3 -o datasets_api `pkg-config --cflags --libs parquet arrow-dataset`
+g++ s3_datasets.cc -O3 -o s3_dataset `pkg-config --cflags --libs parquet arrow-dataset`
+g++ streaming_engine.cc -O3 -o streaming_engine `pkg-config --cflags --libs parquet arrow-dataset`
+g++ write_partitioned.cc -O3 -o write_partitioned `pkg-config --cflags --libs parquet arrow-dataset`

@@ -22,5 +22,5 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-g++ datasets_api.cc -O3 -o datasets_api `pkg-config --cflags --libs parquet arrow-dataset`
-g++ s3_datasets.cc -O3 -o s3_dataset `pkg-config --cflags --libs parquet arrow-dataset`
+g++ compute_functions.cc -o compute_functions `pkg-config --cflags --libs parquet arrow-compute`
+g++ compute_or_not.cc -O3 -o compute_or_not `pkg-config --cflags --libs parquet arrow-compute`
