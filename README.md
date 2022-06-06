@@ -64,10 +64,10 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 
 
 ### Related products <Other books you may enjoy>
-* Hands-On Data Analysis with Pandas - Second Edition [[Packt]](https://www.packtpub.com/product/extending-power-bi-with-python-and-r/9781801078207?utm_source=github&utm_medium=repository&utm_campaign=9781801078207) [[Amazon]](https://www.amazon.com/dp/B09CQ5G53Y)
+* Hands-On Data Analysis with Pandas - Second Edition [[Packt]](https://www.packtpub.com/product/hands-on-data-analysis-with-pandas-second-edition/9781800563452?utm_source=github&utm_medium=repository&utm_campaign=9781800563452) [[Amazon]](https://www.amazon.com/dp/B08R67H7F5)
 
-* Python Data Analysis - Third Edition [[Packt]](https://www.packtpub.com/product/learn-power-bi-second-edition/9781801811958?utm_source=github&utm_medium=repository&utm_campaign=9781801811958) [[Amazon]](https://www.amazon.com/dp/B09K4479P2)
+* Python Data Analysis - Third Edition [[Packt]](https://www.packtpub.com/product/python-data-analysis-third-edition/9781789955248?utm_source=github&utm_medium=repository&utm_campaign=9781789955248) [[Amazon]](https://www.amazon.com/dp/B0859CVGB4)
 
-## Get to Know the Authors
+## Get to Know the Author
 **Matthew Topol**
 is an Apache Arrow contributor and a principal software architect at FactSet Research Systems, Inc. Since joining FactSet in 2009, Matt has worked in both infrastructure and application development, led development teams, and architected large-scale distributed systems for processing analytics on financial data. In his spare time, Matt likes to bash his head against a keyboard, develop and run delightfully demented games of fantasy for his victims—er—friends, and share his knowledge with anyone interested enough to listen.
