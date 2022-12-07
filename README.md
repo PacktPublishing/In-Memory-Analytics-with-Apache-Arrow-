@@ -70,7 +70,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 
 ## Get to Know the Author
 **Matthew Topol**
-is an Apache Arrow contributor and a principal software architect at FactSet Research Systems, Inc. Since joining FactSet in 2009, Matt has worked in both infrastructure and application development, led development teams, and architected large-scale distributed systems for processing analytics on financial data. In his spare time, Matt likes to bash his head against a keyboard, develop and run delightfully demented games of fantasy for his victims—er—friends, and share his knowledge with anyone interested enough to listen.
+is an Apache Arrow contributor and a Staff Software Engineer at Voltron Data. He joined FactSet Research Systems, Inc. in 2009, working in both infrastructure and application development, led development teams, and architected large-scale distributed systems for processing analytics on financial data. He recently joined Voltron Data to work full time on the Apache Arrow libraries directly. In his spare time, Matt likes to bash his head against a keyboard, develop and run delightfully demented games of fantasy for his victims—er—friends, and share his knowledge with anyone interested enough to listen.
 ### Download a free PDF
 
  <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
