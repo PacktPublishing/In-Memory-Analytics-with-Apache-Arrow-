@@ -22,7 +22,7 @@ This book covers the following exciting features:
 * Create Arrow Flight servers and clients for transferring data quickly
 * Build the Arrow libraries locally and contribute back to the community
 
-If you feel this book is for you, get your [copy](https://www.amazon.com/dp/B09NC5XJ6D) today!
+If you feel this book is for you, get your [copy](https://www.amazon.com/Memory-Analytics-Apache-Arrow-hierarchical/dp/1801071039) today!
 
 <a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
 alt="https://www.packtpub.com/" border="5" /></a>
